@@ -2,14 +2,23 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F1021" minimumToolsVersion="Automatic">
     <entity name="Devices" representedClassName=".Devices" syncable="YES">
         <attribute name="deviceID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="deviceType" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Transformable" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="purchaseDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="deviceType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceType" inverseName="devices" inverseEntity="DeviceType" syncable="YES"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="devices" inverseEntity="Person" syncable="YES"/>
         <fetchedProperty name="purchasedOnSameDate" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="Devices" predicateString="purchaseDate == $FETCH_SOURCE.purchaseDate"/>
         </fetchedProperty>
+    </entity>
+    <entity name="DeviceType" representedClassName=".DeviceType" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="devices" toMany="YES" deletionRule="Nullify" destinationEntity="Devices" inverseName="deviceType" inverseEntity="Devices" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Person" representedClassName=".Person" syncable="YES">
         <attribute name="name" attributeType="String" minValueString="2" indexed="YES" syncable="YES"/>
@@ -18,5 +27,6 @@
     <elements>
         <element name="Devices" positionX="-63" positionY="-18" width="128" height="164"/>
         <element name="Person" positionX="-45" positionY="18" width="128" height="75"/>
+        <element name="DeviceType" positionX="-54" positionY="45" width="128" height="75"/>
     </elements>
 </model>

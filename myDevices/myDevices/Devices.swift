@@ -12,5 +12,11 @@ import CoreData
 class Devices: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
-
+    var deviceDescription: String {
+        if let deviceType = deviceType {
+        return "\(name) (\(deviceType.name))"
+    } else {
+        return "\(name)"
+        }
+    }
 }

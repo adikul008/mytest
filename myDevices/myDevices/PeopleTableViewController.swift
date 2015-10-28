@@ -16,11 +16,14 @@ protocol PersonPickerDelegate: class {
 class PeopleTableViewController: UITableViewController {
     
     var people = [Person]()
-    var managedObjectContext:NSManagedObjectContext = {
+//    var managedObjectContext:NSManagedObjectContext = {
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        return appDelegate.managedObjectContext
+//    }()
+    var coreDataStack: CoreDataStack = {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        return appDelegate.managedObjectContext
-    }()
-    
+        return appDelegate.coreDataStack
+        }()
     weak var pickerDelegate: PersonPickerDelegate?
     var selectedPerson: Person?
     
@@ -44,7 +47,7 @@ class PeopleTableViewController: UITableViewController {
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         personFetchRequest.sortDescriptors = [sortDescriptor]
         do {
-            if let results = try managedObjectContext.executeFetchRequest(personFetchRequest) as? [Person] {
+            if let results = try coreDataStack.managedObjectContext.executeFetchRequest(personFetchRequest) as? [Person] {
                 people = results
             }
         } catch {
@@ -101,7 +104,7 @@ class PeopleTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let person = people[indexPath.row]
-            managedObjectContext.deleteObject(person)
+            coreDataStack.managedObjectContext.deleteObject(person)
             reloadData()
         }
         
@@ -135,14 +138,24 @@ class PeopleTableViewController: UITableViewController {
     
     func saveName(name: String) {
         if name != "" {
-            guard let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedObjectContext) else {
+            guard let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: coreDataStack.managedObjectContext) else {
                 fatalError("Could not find entity description")
             }
             
-            let person = Person(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
+            let person = Person(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
             person.name = name
+            do {
+                try coreDataStack.managedObjectContext.save()
+            } catch {
+                coreDataStack.managedObjectContext.deleteObject(person)
+                let alert = UIAlertController(title: "Error", message: "A person's name must be stronger than single character!", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            
+            reloadData()
         }
-        reloadData()
+//        reloadData()
         tableView.reloadData()
     }
 }

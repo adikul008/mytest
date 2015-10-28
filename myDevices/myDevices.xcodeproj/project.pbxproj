@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7E31E1CC1BCCE71800FB9A70 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E31E1CB1BCCE71800FB9A70 /* DebugViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7E31E1CE1BCD336B00FB9A70 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E31E1CD1BCD336B00FB9A70 /* CoreDataStack.swift */; settings = {ASSET_TAGS = (); }; };
 		7E8565A61BCB7F4500AEB805 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8565A41BCB7F4500AEB805 /* Person+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		7E8565A71BCB7F4500AEB805 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8565A51BCB7F4500AEB805 /* Person.swift */; settings = {ASSET_TAGS = (); }; };
 		7E8565A91BCB830400AEB805 /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8565A81BCB830400AEB805 /* PeopleTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7E8728141BDF4A8B00F94273 /* DeviceType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8728121BDF4A8B00F94273 /* DeviceType+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		7E8728151BDF4A8B00F94273 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8728131BDF4A8B00F94273 /* DeviceType.swift */; settings = {ASSET_TAGS = (); }; };
+		7E8728171BDF4DB700F94273 /* Model-V1-to-V2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7E8728161BDF4DB700F94273 /* Model-V1-to-V2.xcmappingmodel */; settings = {ASSET_TAGS = (); }; };
+		7E8728191BDF4E9B00F94273 /* DeviceTypeMigrationV1ToV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8728181BDF4E9B00F94273 /* DeviceTypeMigrationV1ToV2.swift */; settings = {ASSET_TAGS = (); }; };
 		7EB9835C1BC79DE900349AA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB9835B1BC79DE900349AA2 /* AppDelegate.swift */; };
 		7EB9835E1BC79DE900349AA2 /* DevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB9835D1BC79DE900349AA2 /* DevicesTableViewController.swift */; };
 		7EB983611BC79DE900349AA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB9835F1BC79DE900349AA2 /* Main.storyboard */; };
@@ -24,9 +29,15 @@
 
 /* Begin PBXFileReference section */
 		7E31E1CB1BCCE71800FB9A70 /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		7E31E1CD1BCD336B00FB9A70 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7E8565A41BCB7F4500AEB805 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7E8565A51BCB7F4500AEB805 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7E8565A81BCB830400AEB805 /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
+		7E8728111BDF495200F94273 /* myDevices 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "myDevices 2.xcdatamodel"; sourceTree = "<group>"; };
+		7E8728121BDF4A8B00F94273 /* DeviceType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E8728131BDF4A8B00F94273 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		7E8728161BDF4DB700F94273 /* Model-V1-to-V2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "Model-V1-to-V2.xcmappingmodel"; sourceTree = "<group>"; };
+		7E8728181BDF4E9B00F94273 /* DeviceTypeMigrationV1ToV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTypeMigrationV1ToV2.swift; sourceTree = "<group>"; };
 		7EB983581BC79DE900349AA2 /* myDevices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDevices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB9835B1BC79DE900349AA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB9835D1BC79DE900349AA2 /* DevicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesTableViewController.swift; sourceTree = "<group>"; };
@@ -70,11 +81,14 @@
 		7EB9835A1BC79DE900349AA2 /* myDevices */ = {
 			isa = PBXGroup;
 			children = (
+				7E8728121BDF4A8B00F94273 /* DeviceType+CoreDataProperties.swift */,
+				7E8728131BDF4A8B00F94273 /* DeviceType.swift */,
 				7E8565A41BCB7F4500AEB805 /* Person+CoreDataProperties.swift */,
 				7E8565A51BCB7F4500AEB805 /* Person.swift */,
 				7EB983721BC7D1B300349AA2 /* Devices+CoreDataProperties.swift */,
 				7EB983731BC7D1B300349AA2 /* Devices.swift */,
 				7EB9835B1BC79DE900349AA2 /* AppDelegate.swift */,
+				7E31E1CD1BCD336B00FB9A70 /* CoreDataStack.swift */,
 				7EB9835D1BC79DE900349AA2 /* DevicesTableViewController.swift */,
 				7EB983701BC7CFAF00349AA2 /* DevicesDetailsViewController.swift */,
 				7E8565A81BCB830400AEB805 /* PeopleTableViewController.swift */,
@@ -83,6 +97,8 @@
 				7EB983651BC79DE900349AA2 /* Assets.xcassets */,
 				7EB983671BC79DE900349AA2 /* LaunchScreen.storyboard */,
 				7EB9836A1BC79DE900349AA2 /* Info.plist */,
+				7E8728161BDF4DB700F94273 /* Model-V1-to-V2.xcmappingmodel */,
+				7E8728181BDF4E9B00F94273 /* DeviceTypeMigrationV1ToV2.swift */,
 				7EB983621BC79DE900349AA2 /* myDevices.xcdatamodeld */,
 			);
 			path = myDevices;
@@ -160,14 +176,19 @@
 			files = (
 				7E8565A61BCB7F4500AEB805 /* Person+CoreDataProperties.swift in Sources */,
 				7EB9835E1BC79DE900349AA2 /* DevicesTableViewController.swift in Sources */,
+				7E8728151BDF4A8B00F94273 /* DeviceType.swift in Sources */,
+				7E8728171BDF4DB700F94273 /* Model-V1-to-V2.xcmappingmodel in Sources */,
 				7EB983711BC7CFAF00349AA2 /* DevicesDetailsViewController.swift in Sources */,
 				7EB983641BC79DE900349AA2 /* myDevices.xcdatamodeld in Sources */,
 				7E31E1CC1BCCE71800FB9A70 /* DebugViewController.swift in Sources */,
 				7EB983741BC7D1B300349AA2 /* Devices+CoreDataProperties.swift in Sources */,
+				7E31E1CE1BCD336B00FB9A70 /* CoreDataStack.swift in Sources */,
+				7E8728191BDF4E9B00F94273 /* DeviceTypeMigrationV1ToV2.swift in Sources */,
 				7EB9835C1BC79DE900349AA2 /* AppDelegate.swift in Sources */,
 				7E8565A71BCB7F4500AEB805 /* Person.swift in Sources */,
 				7E8565A91BCB830400AEB805 /* PeopleTableViewController.swift in Sources */,
 				7EB983751BC7D1B300349AA2 /* Devices.swift in Sources */,
+				7E8728141BDF4A8B00F94273 /* DeviceType+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,9 +346,10 @@
 		7EB983621BC79DE900349AA2 /* myDevices.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				7E8728111BDF495200F94273 /* myDevices 2.xcdatamodel */,
 				7EB983631BC79DE900349AA2 /* myDevices.xcdatamodel */,
 			);
-			currentVersion = 7EB983631BC79DE900349AA2 /* myDevices.xcdatamodel */;
+			currentVersion = 7E8728111BDF495200F94273 /* myDevices 2.xcdatamodel */;
 			path = myDevices.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
