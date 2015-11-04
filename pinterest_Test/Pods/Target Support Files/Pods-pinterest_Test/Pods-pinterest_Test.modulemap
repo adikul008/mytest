@@ -1,0 +1,6 @@
+framework module Pods_pinterest_Test {
+  umbrella header "Pods-pinterest_Test-umbrella.h"
+
+  export *
+  module * { export * }
+}
